@@ -1,0 +1,112 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 80% 97%;  /* Light yellow background */
+    --foreground: 140 40% 30%; /* Green text */
+
+    --card: 0 0% 100%;         /* White background */
+    --card-foreground: 140 40% 30%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 40% 30%;
+
+    --primary: 140 40% 30%;    /* Green as primary color */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 60 80% 90%;   /* Light yellow as secondary */
+    --secondary-foreground: 140 40% 30%;
+
+    --muted: 60 60% 96%;
+    --muted-foreground: 140 40% 50%;
+
+    --accent: 140 60% 90%;     /* Light green accent */
+    --accent-foreground: 140 40% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 140 30% 70%;
+    --input: 140 30% 70%;
+    --ring: 140 40% 30%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 140 40% 30%;
+    --sidebar-primary: 140 40% 30%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 60 80% 90%;
+    --sidebar-accent-foreground: 140 40% 30%;
+    --sidebar-border: 60 60% 90%;
+    --sidebar-ring: 140 40% 30%;
+  }
+
+  .dark {
+    --background: 60 30% 15%;  /* Darker yellow background for dark mode */
+    --foreground: 140 40% 80%; /* Lighter green text for dark mode */
+
+    --card: 60 10% 10%;
+    --card-foreground: 140 40% 80%;
+
+    --popover: 60 10% 8%;
+    --popover-foreground: 140 40% 80%;
+
+    --primary: 140 40% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 60 30% 20%;
+    --secondary-foreground: 140 40% 80%;
+
+    --muted: 60 20% 20%;
+    --muted-foreground: 140 40% 70%;
+
+    --accent: 140 20% 25%;
+    --accent-foreground: 140 40% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 140 30% 30%;
+    --input: 140 30% 30%;
+    --ring: 140 40% 50%;
+
+    --sidebar-background: 60 10% 10%;
+    --sidebar-foreground: 140 40% 80%;
+    --sidebar-primary: 140 40% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 60 30% 20%;
+    --sidebar-accent-foreground: 140 40% 80%;
+    --sidebar-border: 60 20% 20%;
+    --sidebar-ring: 140 40% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.task-card {
+  @apply border rounded-lg p-4 bg-card shadow-sm hover:shadow-md transition-shadow;
+}
+
+.kanban-column {
+  @apply flex flex-col h-[600px] w-full min-w-[300px] max-w-[350px] bg-secondary/50 rounded-lg p-4 border;
+}
+
+.shimmer {
+  @apply animate-shimmer bg-gradient-to-r from-transparent via-white/10 to-transparent bg-[length:200%_100%];
+}
+
+.drag-handle {
+  @apply cursor-grab active:cursor-grabbing;
+}
